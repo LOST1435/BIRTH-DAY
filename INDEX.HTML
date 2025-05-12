@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Nabiya 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fdf6f0, #e3f2fd);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 420px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      min-height: 60px;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    p.visible {
+      opacity: 1;
+    }
+
+    button {
+      padding: 10px 25px;
+      background-color: #6cb4ee;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4299e1;
+    }
+
+    .final {
+      font-weight: bold;
+      color: #2f855a;
+    }
+
+    .glow {
+      color: #e91e63;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Assalamu Alaikum, <span class="glow">Nabiya</span> 🌸</h1>
+  <p id="line" class="visible">Today is not just a date... it's a blessing. 🎀</p>
+  <button onclick="nextLine()">Next ➡️</button>
+</div>
+
+<script>
+  const lines = [
+    "You are someone whose presence adds noor to every gathering. 🤍",
+    "And whose silence sometimes speaks louder than words. 🌙",
+    "You are beautiful — not just outside, but in the purity of your heart. ✨",
+    "Your calmness, your smile, your simplicity... it's all rare. 💫",
+    "May Allah ﷻ fill your life with light, peace, and sakoon. 🤲",
+    "May He guide you, protect you, and elevate your status in both worlds. 🕊️",
+    "May all your hidden tears turn into reasons for joy, and all your dreams into reality. 🌹",
+    "I pray that every hardship you've faced brings you closer to Jannah. 🌺",
+    "Nabiya, your existence is a gift,",
+    "On your birthday, I pray you receive only what’s *written beautifully* for you. 📖",
+    "I hope Allah sends ease wrapped in every moment of this coming year. 🎁",
+    "Ameen, ya Rabb. 🌸 Stay the kind, gentle soul you are. Always.",
+    "<span class='final'>— From someone who truly admires you in silence. 🤍</span>"
+  ];
+
+  let i = 0;
+  const text = document.getElementById("line");
+
+  function nextLine() {
+    if (i < lines.length) {
+      text.classList.remove("visible");
+      setTimeout(() => {
+        text.innerHTML = lines[i];
+        text.classList.add("visible");
+        i++;
+      }, 300);
+    } else {
+      text.classList.remove("visible");
+      setTimeout(() => {
+        text.innerHTML = "💖 That’s all for now. May your year ahead be the most beautiful one yet, Nabiya.";
+        text.classList.add("visible");
+        document.querySelector("button").style.display = "none";
+      }, 300);
+    }
+  }
+</script>
+
+</body>
+</html>
